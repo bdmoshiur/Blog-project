@@ -6,12 +6,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Category List</h1>
+            <h1 class="m-0 text-dark">Tag List</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
-          <li class="breadcrumb-item active">Category List</li>
+          <li class="breadcrumb-item active">Tag List</li>
         </ol>
       </div>
     </div>
@@ -26,8 +26,8 @@
         <div class="card">
               <div class="card-header">
                 <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="card-title">Category List</h3>
-                    <a href="{{ route('category.create') }}" class="btn btn-primary">Create Category</a>
+                    <h3 class="card-title">Tag List</h3>
+                    <a href="{{ route('tag.create') }}" class="btn btn-primary">Create Tag</a>
                 </div>
               </div>
               <div class="card-body p-0">
@@ -42,16 +42,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                      @if ($categories->count())
-                      @foreach ($categories as $category)
+                    @if ($tags->count())
+                      @foreach ($tags as $tag)
                       <tr>
-                        <td>{{ $category->id }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->slug }}</td>
-                        <td>{{ $category->id }}</td>
+                        <td>{{ $tag->id }}</td>
+                        <td>{{ $tag->name }}</td>
+                        <td>{{ $tag->slug }}</td>
+                        <td>{{ $tag->id }}</td>
                         <td class="d-flex">
-                          <a href="{{ route('category.edit',[$category->id]) }}" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></a>
-                          <form action="{{ route('category.destroy',[$category->id]) }}" class="mr-1" method="POST">
+                          <a href="{{ route('tag.edit',[$tag->id]) }}" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></a>
+                          <form action="{{ route('tag.destroy',[$tag->id]) }}" class="mr-1" method="POST">
                               @method('DELETE')
                               @csrf
                               <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
@@ -62,7 +62,7 @@
                       @else 
                       <tr>
                           <td colspan="5">
-                              <h3 class="text-center">Category Not Found</h3>
+                              <h3 class="text-center">Tag Not Found</h3>
                           </td>
                       </tr>
                       @endif

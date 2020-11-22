@@ -28,7 +28,7 @@
                 <div class="card-header">
                   <div class="d-flex align-items-center justify-content-between">
                       <h3 class="card-title">Create Category</h3>
-                      <a href="{{ route('category.create') }}" class="btn btn-primary">Go Back to Category List</a>
+                      <a href="{{ route('category.index') }}" class="btn btn-primary">Go Back to Category List</a>
                   </div>
                 </div>
                 <div class="card-body p-0">
@@ -40,10 +40,10 @@
                                 @include('includes.errors')
                               <div class="form-group">
                                 <label for="name">Category Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Category Name">
+                                <input type="text" class="form-control" name="name" id="name">
                               </div>
                               <div class="form-group">
-                                <label for="description">Description</label>
+                                <label for="description">Category Description</label>
                                <textarea name="description" class="form-control" id="description"></textarea>
                               </div>
                             </div>
